@@ -7,7 +7,51 @@
     <title>Evan Hiss | Portfolio</title>
 
     <style>
-        * {
+        * {.clickable-project {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .clickable-project:hover {
+            transform: scale(1.01);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 25px;
+            width: 85%;
+            max-width: 700px;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-btn:hover {
+            color: #000;
+        }
+        .modal-img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -744,19 +788,56 @@
             </div>
 
 
-            <div class="step">
+         <!-- Clickable Section -->
+<div class="step clickable-project" onclick="openModal()">
+    <h3>
+        Data Analysis · Future
+    </h3>
+    <p>
+        Building real projects using datasets,
+        Python, SQL, spreadsheets, and
+        visualization tools. 
+        <br><strong style="color: #0366d6;">(Click to view project details)</strong>
+    </p>
+</div>
 
-                <h3>
-                    Data Analysis · Future
-                </h3>
+<!-- The Popup Window -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        
+        <h2>Cedar Point Rides Analysis</h2>
+        
+        <p><strong>Description:</strong> This project analyzes coaster rankings, popularity, and score values using SQL data queries and visual charts.</p>
+        
+        <!-- Your Chart Picture -->
+        <p><strong>Project Chart:</strong></p>
+        <img src="your-chart-image.png" alt="Cedar Point Chart" class="modal-img">
+        
+        <!-- Your SQL Code -->
+        <p><strong>SQL Code Used:</strong></p>
+        <pre style="background: #f4f4f9; padding: 15px; border-radius: 5px; overflow-x: auto; text-align: left;"><code>
+-- Paste your actual SQL code here!
+SELECT * FROM cedar_point_rides;
+        </code></pre>
+    </div>
+</div>
 
-                <p>
-                    Building real projects using datasets,
-                    Python, SQL, spreadsheets, and
-                    visualization tools.
-                </p>
-
-            </div>
+<!-- JavaScript to handle the click actions -->
+<script>
+    function openModal() {
+        document.getElementById("projectModal").style.display = "block";
+    }
+    function closeModal() {
+        document.getElementById("projectModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+        var modal = document.getElementById("projectModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
         </div>
 
@@ -801,40 +882,6 @@
         <p class="ai-note">
             AI-assisted learning & development.
         </p>
-<!-- CEDAR POINT PROJECT SECTION -->
-    <section>
-        <div class="project-box">
-            <details>
-                <summary>Cedar Point Rides SQL Project</summary>
-                <p><strong>Description:</strong> Analyzing roller coaster rankings and data using SQL.</p>
-                <pre><code>
--- DROP TABLE IF EXISTS cedar_point_rides;
-
-CREATE TABLE cedar_point_rides (
-    rank_number INT,
-    ride_name TEXT,
-    score_value INT
-);
-
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (1, 'Maverick', 71);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (2, 'Top Thrill 2', 69);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (3, 'Siren''s Curse', 60);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (4, 'Steel Vengeance', 46);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (5, 'Valravn', 46);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (6, 'Millennium Force', 41);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (7, 'Raptor', 33);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (8, 'GateKeeper', 30);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (9, 'Wild Mouse', 25);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (10, 'Iron Dragon', 20);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (11, 'Magnum XL-200', 18);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (12, 'Blue Streak', 16);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (14, 'Gemini', 15);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (15, 'Rougarou', 15);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (16, 'Cedar Creek Mine Ride', 14);
-INSERT INTO cedar_point_rides (rank_number, ride_name, score_value) VALUES (17, 'Corkscrew', 13);
-
-SELECT * FROM cedar_point_rides;
-                </code></pre>
             </details>
         </div>
     </section>
