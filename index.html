@@ -6,12 +6,13 @@
     <title>Evan Hiss | Data Analyst Portfolio</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #38bdf8;
-            --text-color: #f8fafc;
+            --bg-color: #090d16;
+            --card-bg: #131c2e;
+            --accent-color: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.2);
+            --text-color: #f1f5f9;
             --text-muted: #94a3b8;
-            --border-color: #334155;
+            --border-color: #1e293b;
         }
 
         body {
@@ -72,7 +73,7 @@
             border-radius: 12px;
             padding: 1.5rem;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
             display: flex;
             flex-direction: column;
@@ -81,7 +82,7 @@
 
         .project-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px -3px var(--accent-glow);
             border-color: var(--accent-color);
         }
 
@@ -105,7 +106,7 @@
         }
 
         .tag {
-            background-color: #0f172a;
+            background-color: #090d16;
             color: var(--accent-color);
             font-size: 0.75rem;
             padding: 0.25rem 0.6rem;
@@ -146,46 +147,46 @@
             <p class="subtitle">15 years old • Student at Thomas Worthington High School</p>
         </header>
 
-        <h2 class="section-title">Featured SQL & Data Projects</h2>
+        <h2 class="section-title">Core Competencies & Datasets</h2>
 
         <div class="projects-grid">
-            <!-- Project 1 -->
+            <!-- Broad Category 1 -->
             <div class="project-card">
                 <div>
-                    <h3>Healthcare Patient Wait-Time Analysis</h3>
+                    <h3>Relational Database Architecture</h3>
                     <div class="tags">
-                        <span class="tag">SQL</span>
-                        <span class="tag">Advanced Filtering</span>
+                        <span class="tag">SQL Schema</span>
+                        <span class="tag">Normalization</span>
                     </div>
-                    <p>Queried large hospital databases to isolate bottleneck departments, tracking patient wait averages and staff allocation efficiency.</p>
+                    <p>Designing structured relational models, foreign key relationships, and optimized schema definitions for large-scale data systems.</p>
                 </div>
-                <a href="#" class="btn">View Project</a>
+                <a href="#" class="btn">Explore Architecture</a>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Broad Category 2 -->
             <div class="project-card">
                 <div>
-                    <h3>Financial Fraud Detection Queries</h3>
+                    <h3>Advanced Data Aggregation</h3>
                     <div class="tags">
-                        <span class="tag">SQL</span>
-                        <span class="tag">Subqueries</span>
+                        <span class="tag">GROUP BY</span>
+                        <span class="tag">Having Clauses</span>
                     </div>
-                    <p>Designed complex conditional SQL scripts to catch irregular transaction outliers and flag suspicious account behaviors.</p>
+                    <p>Executing complex grouping logic, conditional statements, and multi-layered metric summaries to derive business intelligence.</p>
                 </div>
-                <a href="#" class="btn">View Project</a>
+                <a href="#" class="btn">Explore Queries</a>
             </div>
 
-            <!-- Project 3 -->
+            <!-- Broad Category 3 -->
             <div class="project-card">
                 <div>
-                    <h3>Global Streaming Trends Dashboard</h3>
+                    <h3>Large-Scale Data Optimization</h3>
                     <div class="tags">
-                        <span class="tag">SQL</span>
-                        <span class="tag">Window Functions</span>
+                        <span class="tag">Indexing</span>
+                        <span class="tag">Performance Tuning</span>
                     </div>
-                    <p>Implemented analytical window functions (RANK, ROW_NUMBER) to discover top-rated genres and user watch-time patterns globally.</p>
+                    <p>Writing highly efficient execution plans, reducing query runtimes, and managing data pipeline bottlenecks efficiently.</p>
                 </div>
-                <a href="#" class="btn">View Project</a>
+                <a href="#" class="btn">Explore Optimization</a>
             </div>
         </div>
 
