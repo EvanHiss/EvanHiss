@@ -6,13 +6,13 @@
     <title>Evan Hiss | Data Analyst Portfolio</title>
     <style>
         :root {
-            --bg-color: #090d16;
-            --card-bg: #131c2e;
-            --accent-color: #10b981;
-            --accent-glow: rgba(16, 185, 129, 0.2);
-            --text-color: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border-color: #1e293b;
+            --bg-color: #0c0a1d;
+            --card-bg: #171433;
+            --accent-color: #a855f7;
+            --accent-glow: rgba(168, 85, 247, 0.2);
+            --text-color: #f3e8ff;
+            --text-muted: #cbd5e1;
+            --border-color: #2e2854;
         }
 
         body {
@@ -58,8 +58,10 @@
 
         .section-title {
             font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin: 2.5rem 0 1.5rem 0;
             color: var(--text-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 0.75rem;
         }
 
         .projects-grid {
@@ -106,7 +108,7 @@
         }
 
         .tag {
-            background-color: #090d16;
+            background-color: #0c0a1d;
             color: var(--accent-color);
             font-size: 0.75rem;
             padding: 0.25rem 0.6rem;
@@ -143,50 +145,63 @@
     <div class="portfolio-container">
         <header>
             <h1>Evan Hiss</h1>
-            <p class="bio">Aspiring Data Analyst</p>
+            <p class="bio">Aspiring Async Data Analyst</p>
             <p class="subtitle">15 years old • Student at Thomas Worthington High School</p>
         </header>
 
-        <h2 class="section-title">Core Competencies & Datasets</h2>
-
+        <!-- PYTHON & ASYNC SECTION -->
+        <h2 class="section-title">Python & Asynchronous Scripting</h2>
         <div class="projects-grid">
-            <!-- Broad Category 1 -->
             <div class="project-card">
                 <div>
-                    <h3>Relational Database Architecture</h3>
+                    <h3>Async API Data Pipelines</h3>
                     <div class="tags">
-                        <span class="tag">SQL Schema</span>
-                        <span class="tag">Normalization</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Asyncio</span>
                     </div>
-                    <p>Designing structured relational models, foreign key relationships, and optimized schema definitions for large-scale data systems.</p>
+                    <p>Building high-performance asynchronous routines to fetch, parse, and ingest multiple concurrent data streams simultaneously without blocking execution.</p>
                 </div>
-                <a href="#" class="btn">Explore Architecture</a>
+                <a href="#" class="btn">View Script</a>
             </div>
 
-            <!-- Broad Category 2 -->
             <div class="project-card">
                 <div>
-                    <h3>Advanced Data Aggregation</h3>
+                    <h3>Concurrent Web Scraping Engine</h3>
                     <div class="tags">
-                        <span class="tag">GROUP BY</span>
-                        <span class="tag">Having Clauses</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Aiohttp</span>
                     </div>
-                    <p>Executing complex grouping logic, conditional statements, and multi-layered metric summaries to derive business intelligence.</p>
+                    <p>Developing non-blocking web scrapers capable of harvesting large datasets rapidly across multiple endpoints.</p>
                 </div>
-                <a href="#" class="btn">Explore Queries</a>
+                <a href="#" class="btn">View Script</a>
+            </div>
+        </div>
+
+        <!-- SQL & PROJECTS SECTION -->
+        <h2 class="section-title">SQL & Independent Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div>
+                    <h3>Custom Dataset Query Framework</h3>
+                    <div class="tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Database Design</span>
+                    </div>
+                    <p>Designing custom relational tables from raw data files and writing robust SQL queries to uncover hidden performance trends.</p>
+                </div>
+                <a href="#" class="btn">View Project</a>
             </div>
 
-            <!-- Broad Category 3 -->
             <div class="project-card">
                 <div>
-                    <h3>Large-Scale Data Optimization</h3>
+                    <h3>Automated Metric Aggregator</h3>
                     <div class="tags">
-                        <span class="tag">Indexing</span>
-                        <span class="tag">Performance Tuning</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Python Integration</span>
                     </div>
-                    <p>Writing highly efficient execution plans, reducing query runtimes, and managing data pipeline bottlenecks efficiently.</p>
+                    <p>Combining asynchronous Python workflows with SQL databases to automate data transformation and reporting tasks.</p>
                 </div>
-                <a href="#" class="btn">Explore Optimization</a>
+                <a href="#" class="btn">View Project</a>
             </div>
         </div>
 
