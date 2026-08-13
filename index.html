@@ -13,6 +13,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: #0f172a;
@@ -27,7 +31,6 @@
             justify-content: center;
             text-align: center;
             padding: 30px;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
         }
 
         .hero {
@@ -88,6 +91,8 @@
             color: #cbd5e1;
         }
 
+        /* SKILLS */
+
         .skills {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -106,37 +111,24 @@
             margin-bottom: 8px;
         }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+        /* PROJECTS */
 
-        .project {
+        .project-box {
             background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #334155;
+            border: 2px dashed #475569;
+            border-radius: 15px;
+            padding: 50px 25px;
+            text-align: center;
+            color: #94a3b8;
         }
 
-        .project h3 {
-            color: #38bdf8;
+        .project-box h3 {
+            color: #e2e8f0;
             margin-bottom: 10px;
+            font-size: 24px;
         }
 
-        .project p {
-            color: #cbd5e1;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #334155;
-            padding: 5px 10px;
-            border-radius: 20px;
-            margin: 3px;
-            font-size: 13px;
-        }
+        /* PROGRESS */
 
         .progress {
             margin-bottom: 25px;
@@ -159,6 +151,26 @@
             height: 100%;
             background: #38bdf8;
             border-radius: 20px;
+        }
+
+        /* GOALS */
+
+        .goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .goal {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .goal h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
         }
 
         footer {
@@ -184,37 +196,48 @@
 
 <header>
     <div class="hero">
+
         <h1>Hi, I'm <span>Evan</span>.</h1>
 
-        <h2>Future Data Analyst 📊</h2>
+        <h2>Aspiring Data Analyst 📊</h2>
 
         <p>
-            I'm a high school student at Thomas Worthington High School
-            learning SQL, Python, data analysis, and data visualization.
-            This portfolio tracks my journey into data analytics.
+            High school student interested in data analytics,
+            programming, SQL, Python, and solving problems with data.
         </p>
 
-        <a href="#projects" class="button">View My Projects</a>
-        <a href="https://github.com/" class="button">GitHub</a>
+        <a href="#projects" class="button">My Projects</a>
+
+        <a href="https://github.com/" class="button">
+            GitHub
+        </a>
+
     </div>
 </header>
 
+
+<!-- ABOUT -->
 
 <section id="about">
 
     <h2>About Me</h2>
 
     <p class="about">
-        I'm currently learning how to work with data and turn datasets
-        into useful information. I'm especially interested in SQL,
-        Python, statistics, and visualization.
+        I'm a high school student at Thomas Worthington High School
+        building my skills in data analytics and programming.
 
-        My goal is to keep building projects, improve my coding skills,
-        and eventually work as a data analyst.
+        I'm currently learning SQL and working toward learning Python,
+        data visualization, statistics, and other tools used by
+        professional data analysts.
+
+        This website tracks my progress and the projects I build
+        along the way.
     </p>
 
 </section>
 
+
+<!-- SKILLS -->
 
 <section>
 
@@ -224,27 +247,27 @@
 
         <div class="skill">
             <h3>🗄️ SQL</h3>
-            <p>Learning</p>
+            <p>Currently Learning</p>
         </div>
 
         <div class="skill">
             <h3>🐍 Python</h3>
-            <p>Learning</p>
+            <p>Starting Soon</p>
         </div>
 
         <div class="skill">
             <h3>📊 Data Analysis</h3>
-            <p>Learning</p>
+            <p>Starting Soon</p>
         </div>
 
         <div class="skill">
             <h3>📈 Data Visualization</h3>
-            <p>Learning</p>
+            <p>Starting Soon</p>
         </div>
 
         <div class="skill">
             <h3>📗 Excel</h3>
-            <p>Learning</p>
+            <p>Starting Soon</p>
         </div>
 
         <div class="skill">
@@ -257,62 +280,27 @@
 </section>
 
 
+<!-- PROJECTS -->
+
 <section id="projects">
 
     <h2>Projects</h2>
 
-    <div class="projects">
+    <div class="project-box">
 
-        <div class="project">
+        <h3>🚀 Projects Coming Soon</h3>
 
-            <h3>🎢 Cedar Point Ride Analysis</h3>
-
-            <p>
-                A data analysis project using Cedar Point ride information.
-                I'm using SQL to investigate ride popularity, wait times,
-                speed, height, and rankings.
-            </p>
-
-            <span class="tag">SQL</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">CSV</span>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>🎮 Future Project</h3>
-
-            <p>
-                A future project analyzing video game data using Python,
-                statistics, and data visualization.
-            </p>
-
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>🏀 Future Project</h3>
-
-            <p>
-                A sports statistics project that will use real-world
-                statistics to find trends and interesting patterns.
-            </p>
-
-            <span class="tag">Python</span>
-            <span class="tag">Statistics</span>
-
-        </div>
+        <p>
+            I'm currently building my first data analysis projects.
+            Projects will be added here as I complete them.
+        </p>
 
     </div>
 
 </section>
 
+
+<!-- PROGRESS -->
 
 <section>
 
@@ -322,20 +310,6 @@
 
         <div class="progress-top">
             <span>SQL</span>
-            <span>25%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width: 25%;"></div>
-        </div>
-
-    </div>
-
-
-    <div class="progress">
-
-        <div class="progress-top">
-            <span>Python</span>
             <span>15%</span>
         </div>
 
@@ -349,12 +323,40 @@
     <div class="progress">
 
         <div class="progress-top">
-            <span>Data Visualization</span>
-            <span>10%</span>
+            <span>Python</span>
+            <span>0%</span>
         </div>
 
         <div class="bar">
-            <div class="fill" style="width: 10%;"></div>
+            <div class="fill" style="width: 0%;"></div>
+        </div>
+
+    </div>
+
+
+    <div class="progress">
+
+        <div class="progress-top">
+            <span>Data Analysis</span>
+            <span>0%</span>
+        </div>
+
+        <div class="bar">
+            <div class="fill" style="width: 0%;"></div>
+        </div>
+
+    </div>
+
+
+    <div class="progress">
+
+        <div class="progress-top">
+            <span>Data Visualization</span>
+            <span>0%</span>
+        </div>
+
+        <div class="bar">
+            <div class="fill" style="width: 0%;"></div>
         </div>
 
     </div>
@@ -364,11 +366,25 @@
 
         <div class="progress-top">
             <span>Excel</span>
-            <span>20%</span>
+            <span>0%</span>
         </div>
 
         <div class="bar">
-            <div class="fill" style="width: 20%;"></div>
+            <div class="fill" style="width: 0%;"></div>
+        </div>
+
+    </div>
+
+
+    <div class="progress">
+
+        <div class="progress-top">
+            <span>Statistics</span>
+            <span>0%</span>
+        </div>
+
+        <div class="bar">
+            <div class="fill" style="width: 0%;"></div>
         </div>
 
     </div>
@@ -376,15 +392,47 @@
 </section>
 
 
+<!-- GOALS -->
+
 <section>
 
-    <h2>🎯 My Goal</h2>
+    <h2>Career Goals</h2>
 
-    <p class="about">
-        Build strong skills in SQL, Python, statistics, and data
-        visualization while creating real projects that demonstrate
-        what I can do.
-    </p>
+    <div class="goals">
+
+        <div class="goal">
+            <h3>01 — Learn</h3>
+            <p>
+                Build a strong foundation in SQL, Python,
+                statistics, and data analysis.
+            </p>
+        </div>
+
+        <div class="goal">
+            <h3>02 — Build</h3>
+            <p>
+                Create real projects using real datasets and
+                document what I learn.
+            </p>
+        </div>
+
+        <div class="goal">
+            <h3>03 — Improve</h3>
+            <p>
+                Continue improving my technical skills and
+                understanding of data.
+            </p>
+        </div>
+
+        <div class="goal">
+            <h3>04 — Career</h3>
+            <p>
+                Build a portfolio that can help me pursue
+                future internships and data analyst opportunities.
+            </p>
+        </div>
+
+    </div>
 
 </section>
 
