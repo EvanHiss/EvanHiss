@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Evan | Aspiring Data Analyst</title>
+    <title>Evan | Data Analytics Portfolio</title>
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -18,19 +18,57 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #0f172a;
             color: #e2e8f0;
             line-height: 1.6;
         }
 
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid #334155;
+            padding: 18px 30px;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #38bdf8;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+
         header {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 30px;
+            padding: 40px 25px;
         }
 
         .hero {
@@ -38,8 +76,8 @@
         }
 
         .hero h1 {
-            font-size: 60px;
-            margin-bottom: 10px;
+            font-size: 64px;
+            margin-bottom: 12px;
         }
 
         .hero h1 span {
@@ -50,23 +88,23 @@
             font-size: 28px;
             font-weight: normal;
             color: #94a3b8;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .hero p {
-            font-size: 18px;
             color: #cbd5e1;
+            font-size: 18px;
             margin-bottom: 30px;
         }
 
         .button {
             display: inline-block;
-            padding: 12px 25px;
-            margin: 5px;
             background: #38bdf8;
             color: #0f172a;
-            text-decoration: none;
+            padding: 12px 24px;
+            margin: 5px;
             border-radius: 8px;
+            text-decoration: none;
             font-weight: bold;
         }
 
@@ -74,119 +112,168 @@
             background: #7dd3fc;
         }
 
+        .button.secondary {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+
+        /* SECTIONS */
+
         section {
             max-width: 1100px;
             margin: auto;
-            padding: 80px 25px;
+            padding: 90px 25px;
         }
 
         section h2 {
             font-size: 36px;
-            margin-bottom: 30px;
             color: #38bdf8;
+            margin-bottom: 30px;
         }
 
-        .about {
-            font-size: 18px;
+        .section-text {
+            max-width: 800px;
             color: #cbd5e1;
+            font-size: 18px;
         }
 
         /* SKILLS */
 
         .skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
 
         .skill {
             background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
             border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
         }
 
         .skill h3 {
             margin-bottom: 8px;
+            color: #f1f5f9;
+        }
+
+        .skill p {
+            color: #94a3b8;
         }
 
         /* PROJECTS */
 
-        .project-box {
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
             background: #1e293b;
-            border: 2px dashed #475569;
-            border-radius: 15px;
-            padding: 50px 25px;
-            text-align: center;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 30px;
+            min-height: 200px;
+        }
+
+        .project h3 {
+            color: #f1f5f9;
+            margin-bottom: 12px;
+        }
+
+        .project p {
             color: #94a3b8;
         }
 
-        .project-box h3 {
-            color: #e2e8f0;
-            margin-bottom: 10px;
-            font-size: 24px;
+        .empty {
+            border: 2px dashed #475569;
+            text-align: center;
         }
 
-        /* PROGRESS */
+        /* EDUCATION */
 
-        .progress {
-            margin-bottom: 25px;
-        }
-
-        .progress-top {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 7px;
-        }
-
-        .bar {
-            height: 12px;
-            background: #334155;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .fill {
-            height: 100%;
-            background: #38bdf8;
-            border-radius: 20px;
-        }
-
-        /* GOALS */
-
-        .goals {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .goal {
+        .education-card {
             background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
             border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 30px;
         }
 
-        .goal h3 {
-            color: #38bdf8;
-            margin-bottom: 10px;
+        .education-card h3 {
+            color: #f1f5f9;
+            font-size: 22px;
+            margin-bottom: 8px;
         }
+
+        .education-card p {
+            color: #94a3b8;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 30px;
+            color: #94a3b8;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER */
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 35px;
             background: #020617;
-            color: #94a3b8;
+            color: #64748b;
         }
 
-        @media (max-width: 600px) {
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
             .hero h1 {
-                font-size: 42px;
+                font-size: 44px;
             }
 
             .hero h2 {
                 font-size: 22px;
+            }
+
+            section {
+                padding: 65px 20px;
             }
         }
     </style>
@@ -194,25 +281,51 @@
 
 <body>
 
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+
+        <div class="logo">Evan.</div>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- HOME -->
+
 <header>
+
     <div class="hero">
 
         <h1>Hi, I'm <span>Evan</span>.</h1>
 
-        <h2>Aspiring Data Analyst 📊</h2>
+        <h2>Aspiring Data Analyst</h2>
 
         <p>
-            High school student interested in data analytics,
-            programming, SQL, Python, and solving problems with data.
+            I am building my skills in data analytics, programming,
+            SQL, and data visualization while creating projects
+            that demonstrate what I can do.
         </p>
 
-        <a href="#projects" class="button">My Projects</a>
+        <a href="#projects" class="button">
+            View Projects
+        </a>
 
-        <a href="https://github.com/" class="button">
+        <a href="https://github.com/" class="button secondary">
             GitHub
         </a>
 
     </div>
+
 </header>
 
 
@@ -222,16 +335,15 @@
 
     <h2>About Me</h2>
 
-    <p class="about">
-        I'm a high school student at Thomas Worthington High School
-        building my skills in data analytics and programming.
+    <p class="section-text">
 
-        I'm currently learning SQL and working toward learning Python,
-        data visualization, statistics, and other tools used by
-        professional data analysts.
+        I'm interested in using data to solve problems, discover
+        patterns, and turn information into useful insights.
 
-        This website tracks my progress and the projects I build
-        along the way.
+        I'm currently developing my technical skills and building
+        projects to create a strong foundation for a future career
+        in data analytics.
+
     </p>
 
 </section>
@@ -239,39 +351,39 @@
 
 <!-- SKILLS -->
 
-<section>
+<section id="skills">
 
     <h2>Skills</h2>
 
     <div class="skills">
 
         <div class="skill">
-            <h3>🗄️ SQL</h3>
-            <p>Currently Learning</p>
+            <h3>SQL</h3>
+            <p>Learning</p>
         </div>
 
         <div class="skill">
-            <h3>🐍 Python</h3>
-            <p>Starting Soon</p>
+            <h3>Python</h3>
+            <p>Learning</p>
         </div>
 
         <div class="skill">
-            <h3>📊 Data Analysis</h3>
-            <p>Starting Soon</p>
+            <h3>Data Analysis</h3>
+            <p>Learning</p>
         </div>
 
         <div class="skill">
-            <h3>📈 Data Visualization</h3>
-            <p>Starting Soon</p>
+            <h3>Data Visualization</h3>
+            <p>Learning</p>
         </div>
 
         <div class="skill">
-            <h3>📗 Excel</h3>
-            <p>Starting Soon</p>
+            <h3>Excel</h3>
+            <p>Learning</p>
         </div>
 
         <div class="skill">
-            <h3>🐙 GitHub</h3>
+            <h3>Git & GitHub</h3>
             <p>Learning</p>
         </div>
 
@@ -286,13 +398,35 @@
 
     <h2>Projects</h2>
 
-    <div class="project-box">
+    <div class="projects">
 
-        <h3>🚀 Projects Coming Soon</h3>
+        <div class="project empty">
+
+            <h3>Projects Coming Soon</h3>
+
+            <p>
+                Real data projects will be added here as I build them.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <h2>Education</h2>
+
+    <div class="education-card">
+
+        <h3>Thomas Worthington High School</h3>
 
         <p>
-            I'm currently building my first data analysis projects.
-            Projects will be added here as I complete them.
+            High School Student
         </p>
 
     </div>
@@ -300,146 +434,48 @@
 </section>
 
 
-<!-- PROGRESS -->
+<!-- CERTIFICATIONS -->
 
 <section>
 
-    <h2>Learning Progress</h2>
+    <h2>Certifications</h2>
 
-    <div class="progress">
+    <div class="certifications">
 
-        <div class="progress-top">
-            <span>SQL</span>
-            <span>15%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width: 15%;"></div>
-        </div>
-
-    </div>
-
-
-    <div class="progress">
-
-        <div class="progress-top">
-            <span>Python</span>
-            <span>0%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width: 0%;"></div>
-        </div>
-
-    </div>
-
-
-    <div class="progress">
-
-        <div class="progress-top">
-            <span>Data Analysis</span>
-            <span>0%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width: 0%;"></div>
-        </div>
-
-    </div>
-
-
-    <div class="progress">
-
-        <div class="progress-top">
-            <span>Data Visualization</span>
-            <span>0%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width: 0%;"></div>
-        </div>
-
-    </div>
-
-
-    <div class="progress">
-
-        <div class="progress-top">
-            <span>Excel</span>
-            <span>0%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width: 0%;"></div>
-        </div>
-
-    </div>
-
-
-    <div class="progress">
-
-        <div class="progress-top">
-            <span>Statistics</span>
-            <span>0%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width: 0%;"></div>
-        </div>
+        No certifications yet. This section will be updated as
+        certifications are earned.
 
     </div>
 
 </section>
 
 
-<!-- GOALS -->
+<!-- CONTACT -->
 
-<section>
+<section id="contact">
 
-    <h2>Career Goals</h2>
+    <h2>Contact</h2>
 
-    <div class="goals">
+    <div class="contact-box">
 
-        <div class="goal">
-            <h3>01 — Learn</h3>
-            <p>
-                Build a strong foundation in SQL, Python,
-                statistics, and data analysis.
-            </p>
-        </div>
+        <p>
+            Interested in my work or want to connect?
+        </p>
 
-        <div class="goal">
-            <h3>02 — Build</h3>
-            <p>
-                Create real projects using real datasets and
-                document what I learn.
-            </p>
-        </div>
-
-        <div class="goal">
-            <h3>03 — Improve</h3>
-            <p>
-                Continue improving my technical skills and
-                understanding of data.
-            </p>
-        </div>
-
-        <div class="goal">
-            <h3>04 — Career</h3>
-            <p>
-                Build a portfolio that can help me pursue
-                future internships and data analyst opportunities.
-            </p>
-        </div>
+        <a href="https://github.com/" class="button">
+            GitHub
+        </a>
 
     </div>
 
 </section>
 
+
+<!-- FOOTER -->
 
 <footer>
 
-    <p>© 2026 Evan | Aspiring Data Analyst</p>
+    <p>© 2026 Evan. All rights reserved.</p>
 
 </footer>
 
