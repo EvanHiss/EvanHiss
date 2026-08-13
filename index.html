@@ -26,7 +26,7 @@
         }
 
         .portfolio-container {
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
         }
 
@@ -74,6 +74,9 @@
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -94,6 +97,22 @@
             line-height: 1.5;
         }
 
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #0f172a;
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
@@ -102,7 +121,7 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 1rem;
+            text-align: center;
             transition: opacity 0.2s ease;
         }
 
@@ -127,27 +146,51 @@
             <p class="subtitle">15 years old • Student at Thomas Worthington High School</p>
         </header>
 
-        <h2 class="section-title">SQL & Data Projects</h2>
+        <h2 class="section-title">Featured SQL & Data Projects</h2>
 
         <div class="projects-grid">
-            <!-- Project 1: Cedar Point Analysis -->
+            <!-- Project 1 -->
             <div class="project-card">
-                <h3>Cedar Point Rides Analysis</h3>
-                <p>An in-depth SQL and data visualization project analyzing wait times, coaster stats, and park data.</p>
-                <!-- Clickable Button to view your image/project -->
-                <a href="image.png" target="_blank" class="btn">View Project</a>
+                <div>
+                    <h3>Customer Churn Analysis</h3>
+                    <div class="tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Data Cleaning</span>
+                    </div>
+                    <p>Analyzed subscription data to identify core retention trends and factors leading to customer churn using advanced SQL queries.</p>
+                </div>
+                <a href="#" class="btn">View Project</a>
             </div>
 
-            <!-- Project 2: Placeholder for your next project -->
+            <!-- Project 2 -->
             <div class="project-card">
-                <h3>Future Data Project</h3>
-                <p>Coming soon! Space reserved for your next awesome SQL data analytics breakdown.</p>
-                <a href="#" class="btn">Coming Soon</a>
+                <div>
+                    <h3>E-Commerce Sales Dashboard</h3>
+                    <div class="tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Aggregations</span>
+                    </div>
+                    <p>Extracted and aggregated massive product transaction datasets to find top-performing product categories and seasonal sales spikes.</p>
+                </div>
+                <a href="#" class="btn">View Project</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div>
+                    <h3>Supply Chain Performance</h3>
+                    <div class="tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Joins</span>
+                    </div>
+                    <p>Used multi-table SQL joins to track shipping delays, vendor fulfillment efficiency, and supply chain bottlenecks.</p>
+                </div>
+                <a href="#" class="btn">View Project</a>
             </div>
         </div>
 
         <footer>
-            <p>&copy; 2026 Evan Hiss • Built with clean code & SQL</p>
+            <p>&copy; 2026 Evan Hiss • Built for future data analytics careers</p>
         </footer>
     </div>
 
