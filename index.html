@@ -3,212 +3,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evan Hiss | Data Analyst Portfolio</title>
+
+    <title>Evan | Aspiring Data Analyst</title>
+
     <style>
-        :root {
-            --bg-color: #0c0a1d;
-            --card-bg: #171433;
-            --accent-color: #a855f7;
-            --accent-glow: rgba(168, 85, 247, 0.2);
-            --text-color: #f3e8ff;
-            --text-muted: #cbd5e1;
-            --border-color: #2e2854;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .portfolio-container {
-            max-width: 1000px;
-            width: 100%;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
         }
 
         header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
+            padding: 30px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
         }
 
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
+        .hero {
+            max-width: 850px;
         }
 
-        .bio {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
         }
 
-        p.subtitle {
-            color: var(--text-muted);
-            font-size: 1.05rem;
+        .hero h1 span {
+            color: #38bdf8;
         }
 
-        .section-title {
-            font-size: 1.5rem;
-            margin: 2.5rem 0 1.5rem 0;
-            color: var(--text-color);
-            border-left: 4px solid var(--accent-color);
-            padding-left: 0.75rem;
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
+            color: #94a3b8;
+            margin-bottom: 20px;
         }
 
-        .projects-grid {
+        .hero p {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 5px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #7dd3fc;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #38bdf8;
+        }
+
+        .about {
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+        }
+
+        .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 25px;
         }
 
-        .project-card {
-            background-color: var(--card-bg);
+        .project {
+            background: #1e293b;
+            padding: 25px;
             border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border: 1px solid #334155;
         }
 
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px -3px var(--accent-glow);
-            border-color: var(--accent-color);
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
         }
 
-        .project-card h3 {
-            margin-top: 0;
-            color: var(--accent-color);
-            font-size: 1.3rem;
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            margin: 1rem 0;
-            flex-wrap: wrap;
+        .project p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
         }
 
         .tag {
-            background-color: #0c0a1d;
-            color: var(--accent-color);
-            font-size: 0.75rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        .btn {
             display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: opacity 0.2s ease;
+            background: #334155;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 3px;
+            font-size: 13px;
         }
 
-        .btn:hover {
-            opacity: 0.9;
+        .progress {
+            margin-bottom: 25px;
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+        }
+
+        .bar {
+            height: 12px;
+            background: #334155;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+            background: #38bdf8;
+            border-radius: 20px;
         }
 
         footer {
             text-align: center;
-            margin-top: 4rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            padding: 30px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="portfolio-container">
-        <header>
-            <h1>Evan Hiss</h1>
-            <p class="bio">Aspiring Async Data Analyst</p>
-            <p class="subtitle">15 years old • Student at Thomas Worthington High School</p>
-        </header>
+<header>
+    <div class="hero">
+        <h1>Hi, I'm <span>Evan</span>.</h1>
 
-        <!-- PYTHON & ASYNC SECTION -->
-        <h2 class="section-title">Python & Asynchronous Scripting</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div>
-                    <h3>Async API Data Pipelines</h3>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Asyncio</span>
-                    </div>
-                    <p>Building high-performance asynchronous routines to fetch, parse, and ingest multiple concurrent data streams simultaneously without blocking execution.</p>
-                </div>
-                <a href="#" class="btn">View Script</a>
-            </div>
+        <h2>Future Data Analyst 📊</h2>
 
-            <div class="project-card">
-                <div>
-                    <h3>Concurrent Web Scraping Engine</h3>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Aiohttp</span>
-                    </div>
-                    <p>Developing non-blocking web scrapers capable of harvesting large datasets rapidly across multiple endpoints.</p>
-                </div>
-                <a href="#" class="btn">View Script</a>
-            </div>
-        </div>
+        <p>
+            I'm a high school student at Thomas Worthington High School
+            learning SQL, Python, data analysis, and data visualization.
+            This portfolio tracks my journey into data analytics.
+        </p>
 
-        <!-- SQL & PROJECTS SECTION -->
-        <h2 class="section-title">SQL & Independent Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div>
-                    <h3>Custom Dataset Query Framework</h3>
-                    <div class="tags">
-                        <span class="tag">SQL</span>
-                        <span class="tag">Database Design</span>
-                    </div>
-                    <p>Designing custom relational tables from raw data files and writing robust SQL queries to uncover hidden performance trends.</p>
-                </div>
-                <a href="#" class="btn">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <h3>Automated Metric Aggregator</h3>
-                    <div class="tags">
-                        <span class="tag">SQL</span>
-                        <span class="tag">Python Integration</span>
-                    </div>
-                    <p>Combining asynchronous Python workflows with SQL databases to automate data transformation and reporting tasks.</p>
-                </div>
-                <a href="#" class="btn">View Project</a>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; 2026 Evan Hiss • Built for future data analytics careers</p>
-        </footer>
+        <a href="#projects" class="button">View My Projects</a>
+        <a href="https://github.com/" class="button">GitHub</a>
     </div>
+</header>
+
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <p class="about">
+        I'm currently learning how to work with data and turn datasets
+        into useful information. I'm especially interested in SQL,
+        Python, statistics, and visualization.
+
+        My goal is to keep building projects, improve my coding skills,
+        and eventually work as a data analyst.
+    </p>
+
+</section>
+
+
+<section>
+
+    <h2>Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <h3>🗄️ SQL</h3>
+            <p>Learning</p>
+        </div>
+
+        <div class="skill">
+            <h3>🐍 Python</h3>
+            <p>Learning</p>
+        </div>
+
+        <div class="skill">
+            <h3>📊 Data Analysis</h3>
+            <p>Learning</p>
+        </div>
+
+        <div class="skill">
+            <h3>📈 Data Visualization</h3>
+            <p>Learning</p>
+        </div>
+
+        <div class="skill">
+            <h3>📗 Excel</h3>
+            <p>Learning</p>
+        </div>
+
+        <div class="skill">
+            <h3>🐙 GitHub</h3>
+            <p>Learning</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+
+            <h3>🎢 Cedar Point Ride Analysis</h3>
+
+            <p>
+                A data analysis project using Cedar Point ride information.
+                I'm using SQL to investigate ride popularity, wait times,
+                speed, height, and rankings.
+            </p>
+
+            <span class="tag">SQL</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">CSV</span>
+
+        </div>
+
+
+        <div class="project">
+
+            <h3>🎮 Future Project</h3>
+
+            <p>
+                A future project analyzing video game data using Python,
+                statistics, and data visualization.
+            </p>
+
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+
+        </div>
+
+
+        <div class="project">
+
+            <h3>🏀 Future Project</h3>
+
+            <p>
+                A sports statistics project that will use real-world
+                statistics to find trends and interesting patterns.
+            </p>
+
+            <span class="tag">Python</span>
+            <span class="tag">Statistics</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>Learning Progress</h2>
+
+    <div class="progress">
+
+        <div class="progress-top">
+            <span>SQL</span>
+            <span>25%</span>
+        </div>
+
+        <div class="bar">
+            <div class="fill" style="width: 25%;"></div>
+        </div>
+
+    </div>
+
+
+    <div class="progress">
+
+        <div class="progress-top">
+            <span>Python</span>
+            <span>15%</span>
+        </div>
+
+        <div class="bar">
+            <div class="fill" style="width: 15%;"></div>
+        </div>
+
+    </div>
+
+
+    <div class="progress">
+
+        <div class="progress-top">
+            <span>Data Visualization</span>
+            <span>10%</span>
+        </div>
+
+        <div class="bar">
+            <div class="fill" style="width: 10%;"></div>
+        </div>
+
+    </div>
+
+
+    <div class="progress">
+
+        <div class="progress-top">
+            <span>Excel</span>
+            <span>20%</span>
+        </div>
+
+        <div class="bar">
+            <div class="fill" style="width: 20%;"></div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>🎯 My Goal</h2>
+
+    <p class="about">
+        Build strong skills in SQL, Python, statistics, and data
+        visualization while creating real projects that demonstrate
+        what I can do.
+    </p>
+
+</section>
+
+
+<footer>
+
+    <p>© 2026 Evan | Aspiring Data Analyst</p>
+
+</footer>
 
 </body>
 </html>
