@@ -18,9 +18,9 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            background: #0b0b12;
+            color: #f4f4f5;
             line-height: 1.6;
         }
 
@@ -30,95 +30,125 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(15, 23, 42, 0.95);
-            border-bottom: 1px solid #334155;
-            padding: 18px 30px;
+            background: rgba(11, 11, 18, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #27272a;
         }
 
         .nav-container {
             max-width: 1100px;
             margin: auto;
+            padding: 18px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            color: #38bdf8;
-            font-size: 22px;
-            font-weight: bold;
+            font-size: 21px;
+            font-weight: 700;
+            color: #a78bfa;
         }
 
         nav a {
-            color: #cbd5e1;
+            color: #a1a1aa;
             text-decoration: none;
-            margin-left: 22px;
-            font-size: 15px;
+            margin-left: 24px;
+            font-size: 14px;
+            transition: 0.2s;
         }
 
         nav a:hover {
-            color: #38bdf8;
+            color: #a78bfa;
         }
 
         /* HERO */
 
         header {
-            min-height: 90vh;
+            min-height: 88vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 25px;
+            padding: 80px 25px;
+            background:
+                radial-gradient(circle at 50% 35%, rgba(124, 58, 237, 0.16), transparent 35%);
         }
 
         .hero {
             max-width: 850px;
         }
 
+        .hero-tag {
+            display: inline-block;
+            padding: 7px 14px;
+            margin-bottom: 22px;
+            border: 1px solid #3f3f46;
+            border-radius: 999px;
+            color: #a78bfa;
+            font-size: 13px;
+            background: #11111a;
+        }
+
         .hero h1 {
-            font-size: 64px;
-            margin-bottom: 12px;
+            font-size: clamp(48px, 8vw, 76px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
         }
 
         .hero h1 span {
-            color: #38bdf8;
+            color: #a78bfa;
         }
 
         .hero h2 {
-            font-size: 28px;
-            font-weight: normal;
-            color: #94a3b8;
+            font-size: 26px;
+            font-weight: 400;
+            color: #a1a1aa;
             margin-bottom: 22px;
         }
 
         .hero p {
-            color: #cbd5e1;
-            font-size: 18px;
-            margin-bottom: 30px;
+            max-width: 700px;
+            margin: auto;
+            color: #a1a1aa;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 32px;
         }
 
         .button {
             display: inline-block;
-            background: #38bdf8;
-            color: #0f172a;
-            padding: 12px 24px;
+            padding: 12px 22px;
             margin: 5px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 14px;
+            background: #8b5cf6;
+            color: white;
+            transition: 0.2s;
         }
 
         .button:hover {
-            background: #7dd3fc;
+            background: #a78bfa;
+            transform: translateY(-2px);
         }
 
         .button.secondary {
             background: transparent;
-            color: #38bdf8;
-            border: 1px solid #38bdf8;
+            border: 1px solid #3f3f46;
+            color: #d4d4d8;
         }
 
-        /* SECTIONS */
+        .button.secondary:hover {
+            border-color: #8b5cf6;
+            color: #a78bfa;
+        }
+
+        /* GENERAL SECTIONS */
 
         section {
             max-width: 1100px;
@@ -126,41 +156,56 @@
             padding: 90px 25px;
         }
 
+        .section-label {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
         section h2 {
             font-size: 36px;
-            color: #38bdf8;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
         }
 
         .section-text {
-            max-width: 800px;
-            color: #cbd5e1;
-            font-size: 18px;
+            max-width: 780px;
+            color: #a1a1aa;
+            font-size: 17px;
         }
 
         /* SKILLS */
 
         .skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
         }
 
         .skill {
-            background: #1e293b;
-            border: 1px solid #334155;
+            padding: 24px;
+            background: #11111a;
+            border: 1px solid #27272a;
             border-radius: 12px;
-            padding: 25px;
-            text-align: center;
+            transition: 0.2s;
+        }
+
+        .skill:hover {
+            border-color: #4c1d95;
+            transform: translateY(-3px);
         }
 
         .skill h3 {
-            margin-bottom: 8px;
-            color: #f1f5f9;
+            font-size: 17px;
+            margin-bottom: 6px;
         }
 
         .skill p {
-            color: #94a3b8;
+            color: #71717a;
+            font-size: 14px;
         }
 
         /* PROJECTS */
@@ -168,72 +213,82 @@
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .project {
-            background: #1e293b;
-            border: 1px solid #334155;
+            background: #11111a;
+            border: 1px solid #27272a;
             border-radius: 12px;
-            padding: 30px;
-            min-height: 200px;
+            padding: 28px;
+            min-height: 190px;
         }
 
         .project h3 {
-            color: #f1f5f9;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            font-size: 19px;
         }
 
         .project p {
-            color: #94a3b8;
+            color: #71717a;
+            font-size: 15px;
         }
 
         .empty {
-            border: 2px dashed #475569;
-            text-align: center;
+            border-style: dashed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* EDUCATION */
 
         .education-card {
-            background: #1e293b;
-            border: 1px solid #334155;
+            background: #11111a;
+            border: 1px solid #27272a;
             border-radius: 12px;
-            padding: 30px;
+            padding: 28px;
         }
 
         .education-card h3 {
-            color: #f1f5f9;
-            font-size: 22px;
-            margin-bottom: 8px;
+            font-size: 20px;
+            margin-bottom: 5px;
         }
 
         .education-card p {
-            color: #94a3b8;
+            color: #71717a;
         }
 
         /* CERTIFICATIONS */
 
         .certifications {
-            background: #1e293b;
-            border: 1px solid #334155;
+            background: #11111a;
+            border: 1px solid #27272a;
             border-radius: 12px;
-            padding: 30px;
-            color: #94a3b8;
+            padding: 28px;
+            color: #71717a;
         }
 
         /* CONTACT */
 
         .contact-box {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 35px;
+            background: linear-gradient(
+                135deg,
+                #171322,
+                #11111a
+            );
+            border: 1px solid #3f3f46;
+            border-radius: 14px;
+            padding: 45px 25px;
             text-align: center;
         }
 
+        .contact-box h2 {
+            margin-bottom: 10px;
+        }
+
         .contact-box p {
-            color: #94a3b8;
+            color: #a1a1aa;
             margin-bottom: 20px;
         }
 
@@ -241,18 +296,15 @@
 
         footer {
             text-align: center;
-            padding: 35px;
-            background: #020617;
-            color: #64748b;
+            padding: 30px;
+            border-top: 1px solid #27272a;
+            color: #52525b;
+            font-size: 13px;
         }
 
         /* MOBILE */
 
         @media (max-width: 700px) {
-
-            nav {
-                padding: 15px;
-            }
 
             .nav-container {
                 flex-direction: column;
@@ -260,20 +312,24 @@
             }
 
             nav a {
-                margin: 0 7px;
-                font-size: 13px;
+                margin: 0 6px;
+                font-size: 12px;
             }
 
             .hero h1 {
-                font-size: 44px;
+                letter-spacing: -1px;
             }
 
             .hero h2 {
-                font-size: 22px;
+                font-size: 21px;
             }
 
             section {
                 padding: 65px 20px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -281,203 +337,225 @@
 
 <body>
 
-<!-- NAVIGATION -->
+    <!-- NAVIGATION -->
 
-<nav>
-    <div class="nav-container">
+    <nav>
+        <div class="nav-container">
 
-        <div class="logo">Evan.</div>
+            <div class="logo">Evan.</div>
 
-        <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+            <div>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+
         </div>
-
-    </div>
-</nav>
+    </nav>
 
 
-<!-- HOME -->
+    <!-- HOME -->
 
-<header>
+    <header>
 
-    <div class="hero">
+        <div class="hero">
 
-        <h1>Hi, I'm <span>Evan</span>.</h1>
+            <div class="hero-tag">
+                DATA ANALYTICS PORTFOLIO
+            </div>
 
-        <h2>Aspiring Data Analyst</h2>
+            <h1>
+                Hi, I'm <span>Evan</span>.
+            </h1>
 
-        <p>
-            I am building my skills in data analytics, programming,
-            SQL, and data visualization while creating projects
-            that demonstrate what I can do.
-        </p>
-
-        <a href="#projects" class="button">
-            View Projects
-        </a>
-
-        <a href="https://github.com/" class="button secondary">
-            GitHub
-        </a>
-
-    </div>
-
-</header>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-    <h2>About Me</h2>
-
-    <p class="section-text">
-
-        I'm interested in using data to solve problems, discover
-        patterns, and turn information into useful insights.
-
-        I'm currently developing my technical skills and building
-        projects to create a strong foundation for a future career
-        in data analytics.
-
-    </p>
-
-</section>
-
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-    <h2>Skills</h2>
-
-    <div class="skills">
-
-        <div class="skill">
-            <h3>SQL</h3>
-            <p>Learning</p>
-        </div>
-
-        <div class="skill">
-            <h3>Python</h3>
-            <p>Learning</p>
-        </div>
-
-        <div class="skill">
-            <h3>Data Analysis</h3>
-            <p>Learning</p>
-        </div>
-
-        <div class="skill">
-            <h3>Data Visualization</h3>
-            <p>Learning</p>
-        </div>
-
-        <div class="skill">
-            <h3>Excel</h3>
-            <p>Learning</p>
-        </div>
-
-        <div class="skill">
-            <h3>Git & GitHub</h3>
-            <p>Learning</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-    <h2>Projects</h2>
-
-    <div class="projects">
-
-        <div class="project empty">
-
-            <h3>Projects Coming Soon</h3>
+            <h2>
+                Aspiring Data Analyst
+            </h2>
 
             <p>
-                Real data projects will be added here as I build them.
+                I am building my skills in data analytics, programming,
+                SQL, and data visualization while creating projects
+                that demonstrate what I can do.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="button">
+                    View Projects
+                </a>
+
+                <a href="https://github.com/" class="button secondary">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-label">01 — About</div>
+
+        <h2>About Me</h2>
+
+        <p class="section-text">
+            I'm interested in using data to solve problems, discover
+            patterns, and turn information into useful insights.
+
+            I'm currently developing my technical skills and building
+            projects to create a strong foundation for a future career
+            in data analytics.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-label">02 — Skills</div>
+
+        <h2>Technical Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h3>SQL</h3>
+                <p>Learning</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Learning</p>
+            </div>
+
+            <div class="skill">
+                <h3>Data Analysis</h3>
+                <p>Learning</p>
+            </div>
+
+            <div class="skill">
+                <h3>Data Visualization</h3>
+                <p>Learning</p>
+            </div>
+
+            <div class="skill">
+                <h3>Excel</h3>
+                <p>Learning</p>
+            </div>
+
+            <div class="skill">
+                <h3>Git & GitHub</h3>
+                <p>Learning</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-label">03 — Projects</div>
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <div class="project empty">
+
+                <h3>Projects Coming Soon</h3>
+
+                <p>
+                    Real data projects will be added here as I build them.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-label">04 — Education</div>
+
+        <h2>Education</h2>
+
+        <div class="education-card">
+
+            <h3>Thomas Worthington High School</h3>
+
+            <p>
+                High School Student
             </p>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- EDUCATION -->
+    <!-- CERTIFICATIONS -->
 
-<section id="education">
+    <section>
 
-    <h2>Education</h2>
+        <div class="section-label">05 — Certifications</div>
 
-    <div class="education-card">
+        <h2>Certifications</h2>
 
-        <h3>Thomas Worthington High School</h3>
+        <div class="certifications">
 
-        <p>
-            High School Student
-        </p>
+            No certifications yet. This section will be updated as
+            certifications are earned.
 
-    </div>
+        </div>
 
-</section>
-
-
-<!-- CERTIFICATIONS -->
-
-<section>
-
-    <h2>Certifications</h2>
-
-    <div class="certifications">
-
-        No certifications yet. This section will be updated as
-        certifications are earned.
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- CONTACT -->
+    <!-- CONTACT -->
 
-<section id="contact">
+    <section id="contact">
 
-    <h2>Contact</h2>
+        <div class="contact-box">
 
-    <div class="contact-box">
+            <div class="section-label">06 — Contact</div>
 
-        <p>
-            Interested in my work or want to connect?
-        </p>
+            <h2>Let's Connect</h2>
 
-        <a href="https://github.com/" class="button">
-            GitHub
-        </a>
+            <p>
+                Interested in my work or want to connect?
+            </p>
 
-    </div>
+            <a href="https://github.com/" class="button">
+                GitHub
+            </a>
 
-</section>
+        </div>
+
+    </section>
 
 
-<!-- FOOTER -->
+    <!-- FOOTER -->
 
-<footer>
+    <footer>
 
-    <p>© 2026 Evan. All rights reserved.</p>
+        <p>© 2026 Evan. All rights reserved.</p>
 
-</footer>
+    </footer>
 
 </body>
 </html>
