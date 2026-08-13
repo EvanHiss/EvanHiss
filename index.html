@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Evan | Data Analytics Portfolio</title>
+    <title>Evan | Data Analytics</title>
 
     <style>
         * {
@@ -18,25 +19,25 @@
         }
 
         body {
-            font-family: Inter, Arial, Helvetica, sans-serif;
-            background: #0b0b12;
-            color: #f4f4f5;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+        /* NAV */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 11, 18, 0.92);
+            background: rgba(248, 250, 252, 0.94);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid #27272a;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .nav-container {
-            max-width: 1100px;
+        .nav-inner {
+            max-width: 1150px;
             margin: auto;
             padding: 18px 25px;
             display: flex;
@@ -45,291 +46,351 @@
         }
 
         .logo {
-            font-size: 21px;
+            font-size: 20px;
             font-weight: 700;
-            color: #a78bfa;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #2563eb;
         }
 
         nav a {
-            color: #a1a1aa;
+            margin-left: 25px;
+            color: #475569;
             text-decoration: none;
-            margin-left: 24px;
             font-size: 14px;
-            transition: 0.2s;
+            font-weight: 500;
         }
 
         nav a:hover {
-            color: #a78bfa;
+            color: #2563eb;
         }
 
         /* HERO */
 
-        header {
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 25px;
-            background:
-                radial-gradient(circle at 50% 35%, rgba(124, 58, 237, 0.16), transparent 35%);
-        }
-
         .hero {
-            max-width: 850px;
+            max-width: 1150px;
+            margin: auto;
+            min-height: 82vh;
+            padding: 100px 25px;
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+            align-items: center;
+            gap: 70px;
         }
 
-        .hero-tag {
-            display: inline-block;
-            padding: 7px 14px;
-            margin-bottom: 22px;
-            border: 1px solid #3f3f46;
-            border-radius: 999px;
-            color: #a78bfa;
+        .eyebrow {
+            color: #2563eb;
             font-size: 13px;
-            background: #11111a;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 8vw, 76px);
-            line-height: 1.05;
-            letter-spacing: -2px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 18px;
         }
 
+        .hero h1 {
+            font-size: clamp(52px, 7vw, 82px);
+            line-height: 1;
+            letter-spacing: -4px;
+            margin-bottom: 22px;
+        }
+
         .hero h1 span {
-            color: #a78bfa;
+            color: #2563eb;
         }
 
         .hero h2 {
-            font-size: 26px;
+            font-size: 25px;
             font-weight: 400;
-            color: #a1a1aa;
+            color: #475569;
             margin-bottom: 22px;
         }
 
         .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: #a1a1aa;
+            max-width: 680px;
+            color: #64748b;
             font-size: 17px;
         }
 
-        .buttons {
-            margin-top: 32px;
+        .hero-buttons {
+            margin-top: 30px;
         }
 
         .button {
             display: inline-block;
-            padding: 12px 22px;
-            margin: 5px;
-            border-radius: 8px;
+            padding: 12px 21px;
+            margin-right: 8px;
+            border-radius: 7px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            background: #8b5cf6;
+            background: #2563eb;
             color: white;
-            transition: 0.2s;
         }
 
         .button:hover {
-            background: #a78bfa;
-            transform: translateY(-2px);
+            background: #1d4ed8;
         }
 
-        .button.secondary {
+        .button.outline {
             background: transparent;
-            border: 1px solid #3f3f46;
-            color: #d4d4d8;
+            color: #2563eb;
+            border: 1px solid #bfdbfe;
         }
 
-        .button.secondary:hover {
-            border-color: #8b5cf6;
-            color: #a78bfa;
+        /* HERO SIDE */
+
+        .profile-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
         }
 
-        /* GENERAL SECTIONS */
+        .profile-card .line {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 20px 0;
+        }
+
+        .profile-card strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .profile-card span {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* SECTIONS */
 
         section {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
-            padding: 90px 25px;
+            padding: 95px 25px;
         }
 
-        .section-label {
-            color: #8b5cf6;
-            font-size: 13px;
+        .section-number {
+            color: #2563eb;
+            font-size: 12px;
             font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 8px;
         }
 
         section h2 {
-            font-size: 36px;
-            margin-bottom: 25px;
-            letter-spacing: -0.5px;
+            font-size: 38px;
+            letter-spacing: -1px;
+            margin-bottom: 28px;
         }
 
         .section-text {
-            max-width: 780px;
-            color: #a1a1aa;
+            max-width: 800px;
+            color: #64748b;
             font-size: 17px;
         }
 
         /* SKILLS */
 
-        .skills {
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
         }
 
         .skill {
-            padding: 24px;
-            background: #11111a;
-            border: 1px solid #27272a;
+            background: white;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
-            transition: 0.2s;
+            padding: 24px;
         }
 
-        .skill:hover {
-            border-color: #4c1d95;
-            transform: translateY(-3px);
+        .skill-number {
+            color: #94a3b8;
+            font-size: 12px;
+            margin-bottom: 14px;
         }
 
         .skill h3 {
-            font-size: 17px;
-            margin-bottom: 6px;
+            font-size: 18px;
+            margin-bottom: 5px;
         }
 
         .skill p {
-            color: #71717a;
+            color: #64748b;
             font-size: 14px;
         }
 
         /* PROJECTS */
 
-        .projects {
+        .projects-wrapper {
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .project-row {
+            padding: 30px 0;
+            border-bottom: 1px solid #e2e8f0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: 100px 1fr 150px;
+            gap: 25px;
+            align-items: center;
         }
 
-        .project {
-            background: #11111a;
-            border: 1px solid #27272a;
-            border-radius: 12px;
-            padding: 28px;
-            min-height: 190px;
+        .project-number {
+            color: #94a3b8;
+            font-size: 14px;
         }
 
-        .project h3 {
-            margin-bottom: 10px;
-            font-size: 19px;
-        }
-
-        .project p {
-            color: #71717a;
-            font-size: 15px;
-        }
-
-        .empty {
-            border-style: dashed;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* EDUCATION */
-
-        .education-card {
-            background: #11111a;
-            border: 1px solid #27272a;
-            border-radius: 12px;
-            padding: 28px;
-        }
-
-        .education-card h3 {
+        .project-row h3 {
             font-size: 20px;
             margin-bottom: 5px;
         }
 
-        .education-card p {
-            color: #71717a;
+        .project-row p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .project-status {
+            text-align: right;
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 40px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+        }
+
+        .education-label {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .education h3 {
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .education p {
+            color: #64748b;
         }
 
         /* CERTIFICATIONS */
 
-        .certifications {
-            background: #11111a;
-            border: 1px solid #27272a;
-            border-radius: 12px;
-            padding: 28px;
-            color: #71717a;
+        .certification {
+            padding: 28px 0;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
         }
 
         /* CONTACT */
 
-        .contact-box {
-            background: linear-gradient(
-                135deg,
-                #171322,
-                #11111a
-            );
-            border: 1px solid #3f3f46;
-            border-radius: 14px;
-            padding: 45px 25px;
+        .contact {
+            background: #0f172a;
+            color: white;
+            max-width: none;
+        }
+
+        .contact-inner {
+            max-width: 1150px;
+            margin: auto;
+            padding: 90px 25px;
             text-align: center;
         }
 
-        .contact-box h2 {
-            margin-bottom: 10px;
+        .contact .section-number {
+            color: #60a5fa;
         }
 
-        .contact-box p {
-            color: #a1a1aa;
-            margin-bottom: 20px;
+        .contact h2 {
+            margin-bottom: 12px;
+        }
+
+        .contact p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .contact .button {
+            background: white;
+            color: #0f172a;
+        }
+
+        .contact .button:hover {
+            background: #e2e8f0;
         }
 
         /* FOOTER */
 
         footer {
+            background: #0f172a;
+            border-top: 1px solid #1e293b;
             text-align: center;
-            padding: 30px;
-            border-top: 1px solid #27272a;
-            color: #52525b;
+            padding: 25px;
+            color: #64748b;
             font-size: 13px;
         }
 
         /* MOBILE */
 
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
 
-            .nav-container {
-                flex-direction: column;
-                gap: 12px;
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding-top: 70px;
             }
 
+            .profile-card {
+                max-width: 500px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .project-row {
+                grid-template-columns: 50px 1fr;
+            }
+
+            .project-status {
+                display: none;
+            }
+
+            .education {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
             nav a {
-                margin: 0 6px;
+                margin-left: 9px;
                 font-size: 12px;
             }
 
             .hero h1 {
-                letter-spacing: -1px;
+                font-size: 55px;
             }
 
-            .hero h2 {
-                font-size: 21px;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
 
             section {
-                padding: 65px 20px;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
+                padding: 70px 20px;
             }
         }
     </style>
@@ -340,9 +401,11 @@
     <!-- NAVIGATION -->
 
     <nav>
-        <div class="nav-container">
+        <div class="nav-inner">
 
-            <div class="logo">Evan.</div>
+            <div class="logo">
+                Evan<span>.</span>
+            </div>
 
             <div>
                 <a href="#about">About</a>
@@ -356,14 +419,14 @@
     </nav>
 
 
-    <!-- HOME -->
+    <!-- HERO -->
 
-    <header>
+    <header class="hero">
 
-        <div class="hero">
+        <div>
 
-            <div class="hero-tag">
-                DATA ANALYTICS PORTFOLIO
+            <div class="eyebrow">
+                Data Analytics Portfolio
             </div>
 
             <h1>
@@ -380,17 +443,35 @@
                 that demonstrate what I can do.
             </p>
 
-            <div class="buttons">
+            <div class="hero-buttons">
 
                 <a href="#projects" class="button">
                     View Projects
                 </a>
 
-                <a href="https://github.com/" class="button secondary">
+                <a href="https://github.com/" class="button outline">
                     GitHub
                 </a>
 
             </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <strong>Current Focus</strong>
+            <span>Data Analytics & SQL</span>
+
+            <div class="line"></div>
+
+            <strong>Learning</strong>
+            <span>Python, Excel & Visualization</span>
+
+            <div class="line"></div>
+
+            <strong>Goal</strong>
+            <span>Building a foundation for a future career in data analytics.</span>
 
         </div>
 
@@ -401,7 +482,7 @@
 
     <section id="about">
 
-        <div class="section-label">01 — About</div>
+        <div class="section-number">01 — ABOUT</div>
 
         <h2>About Me</h2>
 
@@ -421,38 +502,44 @@
 
     <section id="skills">
 
-        <div class="section-label">02 — Skills</div>
+        <div class="section-number">02 — SKILLS</div>
 
         <h2>Technical Skills</h2>
 
-        <div class="skills">
+        <div class="skills-grid">
 
             <div class="skill">
+                <div class="skill-number">01</div>
                 <h3>SQL</h3>
                 <p>Learning</p>
             </div>
 
             <div class="skill">
+                <div class="skill-number">02</div>
                 <h3>Python</h3>
                 <p>Learning</p>
             </div>
 
             <div class="skill">
+                <div class="skill-number">03</div>
                 <h3>Data Analysis</h3>
                 <p>Learning</p>
             </div>
 
             <div class="skill">
+                <div class="skill-number">04</div>
                 <h3>Data Visualization</h3>
                 <p>Learning</p>
             </div>
 
             <div class="skill">
+                <div class="skill-number">05</div>
                 <h3>Excel</h3>
                 <p>Learning</p>
             </div>
 
             <div class="skill">
+                <div class="skill-number">06</div>
                 <h3>Git & GitHub</h3>
                 <p>Learning</p>
             </div>
@@ -466,19 +553,28 @@
 
     <section id="projects">
 
-        <div class="section-label">03 — Projects</div>
+        <div class="section-number">03 — PROJECTS</div>
 
         <h2>Projects</h2>
 
-        <div class="projects">
+        <div class="projects-wrapper">
 
-            <div class="project empty">
+            <div class="project-row">
 
-                <h3>Projects Coming Soon</h3>
+                <div class="project-number">
+                    01
+                </div>
 
-                <p>
-                    Real data projects will be added here as I build them.
-                </p>
+                <div>
+                    <h3>Projects Coming Soon</h3>
+                    <p>
+                        Real data projects will be added here as I build them.
+                    </p>
+                </div>
+
+                <div class="project-status">
+                    In Progress
+                </div>
 
             </div>
 
@@ -491,17 +587,27 @@
 
     <section id="education">
 
-        <div class="section-label">04 — Education</div>
+        <div class="section-number">04 — EDUCATION</div>
 
         <h2>Education</h2>
 
-        <div class="education-card">
+        <div class="education">
 
-            <h3>Thomas Worthington High School</h3>
+            <div class="education-label">
+                Education
+            </div>
 
-            <p>
-                High School Student
-            </p>
+            <div>
+
+                <h3>
+                    Thomas Worthington High School
+                </h3>
+
+                <p>
+                    High School Student
+                </p>
+
+            </div>
 
         </div>
 
@@ -512,11 +618,11 @@
 
     <section>
 
-        <div class="section-label">05 — Certifications</div>
+        <div class="section-number">05 — CERTIFICATIONS</div>
 
         <h2>Certifications</h2>
 
-        <div class="certifications">
+        <div class="certification">
 
             No certifications yet. This section will be updated as
             certifications are earned.
@@ -528,20 +634,24 @@
 
     <!-- CONTACT -->
 
-    <section id="contact">
+    <section class="contact" id="contact">
 
-        <div class="contact-box">
+        <div class="contact-inner">
 
-            <div class="section-label">06 — Contact</div>
+            <div class="section-number">
+                06 — CONTACT
+            </div>
 
-            <h2>Let's Connect</h2>
+            <h2>
+                Let's Connect
+            </h2>
 
             <p>
                 Interested in my work or want to connect?
             </p>
 
             <a href="https://github.com/" class="button">
-                GitHub
+                Visit GitHub
             </a>
 
         </div>
@@ -553,9 +663,12 @@
 
     <footer>
 
-        <p>© 2026 Evan. All rights reserved.</p>
+        <p>
+            © 2026 Evan. All rights reserved.
+        </p>
 
     </footer>
 
 </body>
 </html>
+```
