@@ -1,21 +1,19 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analytics | Evan Hiss</title>
+
+    <title>Evan Hiss | Data Analytics</title>
 
     <style>
         :root {
-            --black: #0d0f11;
-            --panel: #15181c;
-            --panel-2: #1b1f24;
-            --line: #292e34;
-            --white: #f3f5f7;
-            --gray: #969da6;
-            --blue: #4f8cff;
-            --blue-soft: #7da8ff;
+            --bg: #0b0d10;
+            --card: #111419;
+            --border: #252a31;
+            --text: #f4f6f8;
+            --muted: #858d98;
+            --blue: #4d8dff;
         }
 
         * {
@@ -29,493 +27,365 @@
         }
 
         body {
-            background: var(--black);
-            color: var(--white);
+            background: var(--bg);
+            color: var(--text);
             font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
         }
 
-        /* SIDE NAVIGATION */
+        a {
+            color: inherit;
+        }
 
-        .side-nav {
+        /* NAV */
+
+        nav {
             position: fixed;
-            left: 0;
             top: 0;
-            width: 74px;
-            height: 100vh;
-            border-right: 1px solid var(--line);
+            left: 0;
+            width: 100%;
+            height: 70px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 25px 0;
-            background: var(--black);
+            padding: 0 6%;
+            background: rgba(11, 13, 16, 0.92);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
             z-index: 100;
         }
 
-        .nav-mark {
-            width: 34px;
-            height: 34px;
-            border: 1px solid var(--line);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            color: var(--blue);
+        .logo {
+            font-size: 17px;
             font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--blue);
         }
 
         .nav-links {
             display: flex;
-            flex-direction: column;
-            gap: 27px;
+            gap: 28px;
         }
 
         .nav-links a {
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
             text-decoration: none;
-            color: #626a73;
-            font-size: 10px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            color: var(--muted);
+            font-size: 13px;
             transition: 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--white);
-        }
-
-        .nav-bottom {
-            color: #4d545c;
-            font-size: 9px;
-            writing-mode: vertical-rl;
-            letter-spacing: 2px;
-        }
-
-        /* MAIN */
-
-        main {
-            margin-left: 74px;
+            color: var(--text);
         }
 
         /* HERO */
 
         .hero {
             min-height: 100vh;
-            padding: 70px 8vw;
             display: flex;
             align-items: center;
-            position: relative;
-            border-bottom: 1px solid var(--line);
+            padding: 120px 8% 80px;
         }
 
-        .hero-grid {
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 330px;
-            gap: 80px;
-            align-items: center;
+        .hero-content {
+            max-width: 850px;
         }
 
-        .small-label {
-            color: var(--blue-soft);
-            font-size: 10px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 {
-            font-size: clamp(65px, 10vw, 125px);
-            line-height: 0.85;
-            letter-spacing: -7px;
-            font-weight: 700;
-            margin-bottom: 35px;
-        }
-
-        .hero h1 span {
+        .tag {
             color: var(--blue);
-        }
-
-        .hero h2 {
-            font-size: 24px;
-            font-weight: 400;
-            color: #c5cad0;
-            margin-bottom: 22px;
-        }
-
-        .hero-description {
-            color: var(--gray);
-            font-size: 16px;
-            max-width: 650px;
-            line-height: 1.8;
-        }
-
-        .hero-links {
-            margin-top: 35px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .hero-link {
-            color: var(--white);
-            border-bottom: 1px solid var(--blue);
-            text-decoration: none;
-            padding-bottom: 5px;
-            font-size: 13px;
-        }
-
-        .hero-link:hover {
-            color: var(--blue-soft);
-        }
-
-        /* DATA PANEL */
-
-        .data-panel {
-            border: 1px solid var(--line);
-            background: var(--panel);
-            padding: 25px;
-        }
-
-        .panel-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--line);
-            padding-bottom: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 20px;
         }
 
-        .panel-header span {
-            font-size: 10px;
-            color: var(--gray);
-            letter-spacing: 1px;
+        h1 {
+            font-size: clamp(60px, 11vw, 135px);
+            line-height: 0.88;
+            letter-spacing: -7px;
+            margin-bottom: 30px;
         }
 
-        .status {
-            color: var(--blue-soft) !important;
+        h1 span {
+            color: var(--blue);
         }
 
-        .data-item {
-            padding: 15px 0;
-            border-bottom: 1px solid var(--line);
+        .hero-text {
+            max-width: 600px;
+            color: var(--muted);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
         }
 
-        .data-item:last-child {
-            border-bottom: none;
-        }
-
-        .data-item label {
-            display: block;
-            color: #626a73;
-            font-size: 9px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .data-item strong {
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        /* SECTIONS */
-
-        .section {
-            padding: 120px 8vw;
-            border-bottom: 1px solid var(--line);
-        }
-
-        .section-top {
+        .buttons {
             display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            margin-bottom: 55px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .section-title {
-            font-size: 42px;
+        .button {
+            display: inline-block;
+            padding: 12px 18px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .button.primary {
+            background: var(--blue);
+            color: white;
+            border-color: var(--blue);
+        }
+
+        .button.primary:hover {
+            opacity: 0.85;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 110px 8%;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 38px;
             letter-spacing: -2px;
         }
 
-        .section-number {
+        .number {
             color: var(--blue);
-            font-size: 11px;
-            letter-spacing: 2px;
+            font-size: 12px;
         }
 
         /* ABOUT */
 
-        .about-content {
-            max-width: 800px;
-            margin-left: 12%;
+        .about {
+            max-width: 850px;
         }
 
-        .about-content p {
-            color: var(--gray);
+        .about p {
+            color: var(--muted);
             font-size: 19px;
             line-height: 1.9;
         }
 
         /* SKILLS */
 
-        .skills-layout {
+        .skills {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid var(--border);
         }
 
-        .skills-intro {
-            color: var(--gray);
-            font-size: 14px;
-            line-height: 1.8;
+        .skill {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            padding-right: 30px;
         }
 
-        .skill-list {
-            border-top: 1px solid var(--line);
+        .skill:nth-child(odd) {
+            border-right: 1px solid var(--border);
+            padding-right: 40px;
         }
 
-        .skill-row {
-            display: grid;
-            grid-template-columns: 60px 1fr 100px;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--line);
-        }
-
-        .skill-number {
-            color: #555c64;
-            font-size: 11px;
+        .skill:nth-child(even) {
+            padding-left: 40px;
         }
 
         .skill-name {
             font-size: 16px;
         }
 
-        .skill-level {
-            text-align: right;
-            color: var(--gray);
-            font-size: 11px;
+        .skill-status {
+            color: var(--muted);
+            font-size: 12px;
         }
 
         /* PROJECTS */
 
-        .project-list {
-            border-top: 1px solid var(--line);
-        }
-
-        .project-row {
+        .projects {
             display: grid;
-            grid-template-columns: 80px 1fr 160px;
-            gap: 30px;
-            align-items: center;
-            min-height: 150px;
-            border-bottom: 1px solid var(--line);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
         }
 
-        .project-id {
+        .project {
+            min-height: 250px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.25s;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue);
+        }
+
+        .project-number {
             color: var(--blue);
             font-size: 11px;
-            letter-spacing: 1px;
         }
 
-        .project-info h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
+        .project h3 {
+            font-size: 22px;
+            margin: 35px 0 10px;
         }
 
-        .project-info p {
-            color: var(--gray);
-            font-size: 13px;
+        .project p {
+            color: var(--muted);
+            font-size: 14px;
         }
 
-        .project-status {
-            text-align: right;
-            color: #606871;
-            font-size: 10px;
-            letter-spacing: 1px;
+        .project-bottom {
+            margin-top: 30px;
+            color: #69717c;
+            font-size: 11px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* EDUCATION */
 
-        .education-layout {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 70px;
-            max-width: 900px;
-        }
-
-        .education-meta {
-            color: var(--gray);
-            font-size: 12px;
-        }
-
-        .education-info h3 {
-            font-size: 25px;
-            margin-bottom: 7px;
-        }
-
-        .education-info p {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        /* CERTIFICATIONS */
-
-        .cert-box {
-            border: 1px solid var(--line);
-            background: var(--panel);
+        .education-box {
+            border: 1px solid var(--border);
+            background: var(--card);
             padding: 30px;
-            color: var(--gray);
             max-width: 800px;
+        }
+
+        .education-box h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .education-box p {
+            color: var(--muted);
+            font-size: 14px;
         }
 
         /* CONTACT */
 
-        .contact-section {
+        .contact {
             min-height: 65vh;
             display: flex;
             align-items: center;
-            padding: 100px 8vw;
         }
 
-        .contact-content {
-            max-width: 700px;
-        }
-
-        .contact-content h2 {
-            font-size: clamp(45px, 7vw, 80px);
-            line-height: 0.95;
-            letter-spacing: -4px;
+        .contact h2 {
+            font-size: clamp(50px, 8vw, 100px);
+            line-height: 0.9;
+            letter-spacing: -5px;
             margin-bottom: 25px;
         }
 
-        .contact-content h2 span {
+        .contact h2 span {
             color: var(--blue);
         }
 
-        .contact-content p {
-            color: var(--gray);
-            margin-bottom: 30px;
-        }
-
-        .contact-link {
-            display: inline-block;
-            color: var(--white);
-            text-decoration: none;
-            border: 1px solid var(--line);
-            padding: 13px 22px;
-            font-size: 13px;
-        }
-
-        .contact-link:hover {
-            border-color: var(--blue);
-            color: var(--blue-soft);
+        .contact p {
+            color: var(--muted);
+            margin-bottom: 25px;
         }
 
         /* FOOTER */
 
         footer {
-            margin-left: 74px;
-            padding: 25px 8vw;
-            border-top: 1px solid var(--line);
-            color: #4d545c;
-            font-size: 10px;
+            padding: 25px 8%;
+            border-top: 1px solid var(--border);
+            color: #555d67;
+            font-size: 11px;
             display: flex;
             justify-content: space-between;
         }
 
         /* MOBILE */
 
-        @media (max-width: 850px) {
+        @media (max-width: 700px) {
 
-            .side-nav {
-                width: 100%;
-                height: 58px;
-                bottom: 0;
-                top: auto;
-                flex-direction: row;
-                padding: 0 18px;
-                border-right: none;
-                border-top: 1px solid var(--line);
-            }
-
-            .nav-mark,
-            .nav-bottom {
-                display: none;
+            nav {
+                padding: 0 20px;
             }
 
             .nav-links {
-                width: 100%;
-                flex-direction: row;
-                justify-content: space-around;
-                gap: 0;
+                gap: 12px;
             }
 
             .nav-links a {
-                writing-mode: horizontal-tb;
-                transform: none;
-                font-size: 9px;
-            }
-
-            main {
-                margin-left: 0;
-            }
-
-            footer {
-                margin-left: 0;
-                margin-bottom: 58px;
-                padding: 25px 20px;
-                flex-direction: column;
-                gap: 8px;
+                font-size: 11px;
             }
 
             .hero {
-                padding: 80px 25px;
+                padding: 110px 25px 70px;
             }
 
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .hero h1 {
+            h1 {
+                font-size: 65px;
                 letter-spacing: -4px;
             }
 
-            .section {
+            .hero-text {
+                font-size: 16px;
+            }
+
+            section {
                 padding: 80px 25px;
             }
 
-            .section-top {
+            .section-heading {
                 margin-bottom: 35px;
             }
 
-            .about-content {
-                margin-left: 0;
+            .section-heading h2 {
+                font-size: 32px;
             }
 
-            .skills-layout {
+            .skills,
+            .projects {
                 grid-template-columns: 1fr;
-                gap: 35px;
             }
 
-            .project-row {
-                grid-template-columns: 60px 1fr;
-                padding: 25px 0;
+            .skill:nth-child(odd) {
+                border-right: none;
+                padding-right: 0;
             }
 
-            .project-status {
-                display: none;
+            .skill:nth-child(even) {
+                padding-left: 0;
             }
 
-            .education-layout {
-                grid-template-columns: 1fr;
-                gap: 15px;
+            .contact h2 {
+                letter-spacing: -3px;
             }
 
-            .contact-section {
-                padding: 80px 25px;
+            footer {
+                padding: 25px;
+                flex-direction: column;
+                gap: 8px;
             }
         }
     </style>
@@ -523,123 +393,72 @@
 
 <body>
 
-    <aside class="side-nav">
-
-        <div class="nav-mark">EH</div>
+    <nav>
+        <div class="logo">EH<span>.</span></div>
 
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
         </div>
-
-        <div class="nav-bottom">
-            2026
-        </div>
-
-    </aside>
+    </nav>
 
 
     <main>
 
-        <header class="hero">
+        <!-- HERO -->
 
-            <div class="hero-grid">
+        <section class="hero">
 
-                <div>
+            <div class="hero-content">
 
-                    <div class="small-label">
-                        Data Analytics / Portfolio
-                    </div>
-
-                    <h1>
-                        Evan Hiss<span>.</span>
-                    </h1>
-
-                    <h2>
-                        Aspiring Data Analyst
-                    </h2>
-
-                    <p class="hero-description">
-                        I am building my skills in data analytics, programming,
-                        SQL, and data visualization while creating projects
-                        that demonstrate what I can do.
-                    </p>
-
-                    <div class="hero-links">
-
-                        <a href="#projects" class="hero-link">
-                            View Projects →
-                        </a>
-
-                        <a href="https://github.com/" class="hero-link" target="_blank">
-                            GitHub →
-                        </a>
-
-                    </div>
-
+                <div class="tag">
+                    Data Analytics
                 </div>
 
+                <h1>
+                    Evan<br>
+                    Hiss<span>.</span>
+                </h1>
 
-                <div class="data-panel">
+                <p class="hero-text">
+                    I'm learning data analytics, starting with SQL,
+                    and building projects to get better at working with data.
+                </p>
 
-                    <div class="panel-header">
-                        <span>PROFILE</span>
-                        <span class="status">ACTIVE</span>
-                    </div>
+                <div class="buttons">
+                    <a href="#projects" class="button primary">
+                        My Projects
+                    </a>
 
-                    <div class="data-item">
-                        <label>Focus</label>
-                        <strong>Data Analytics</strong>
-                    </div>
-
-                    <div class="data-item">
-                        <label>Primary Skill</label>
-                        <strong>SQL</strong>
-                    </div>
-
-                    <div class="data-item">
-                        <label>Current Stage</label>
-                        <strong>Learning & Building</strong>
-                    </div>
-
-                    <div class="data-item">
-                        <label>Career Direction</label>
-                        <strong>Data Analytics</strong>
-                    </div>
-
+                    <a href="https://github.com/" target="_blank" class="button">
+                        GitHub
+                    </a>
                 </div>
 
             </div>
 
-        </header>
+        </section>
 
 
-        <section class="section" id="about">
+        <!-- ABOUT -->
 
-            <div class="section-top">
+        <section id="about">
 
-                <h2 class="section-title">
-                    About
-                </h2>
-
-                <div class="section-number">
-                    01
-                </div>
-
+            <div class="section-heading">
+                <h2>About</h2>
+                <div class="number">01</div>
             </div>
 
-            <div class="about-content">
+            <div class="about">
 
                 <p>
-                    I'm interested in using data to solve problems, discover
-                    patterns, and turn information into useful insights.
-
-                    I'm currently developing my technical skills and building
-                    projects to create a strong foundation for a future career
-                    in data analytics.
+                    I'm interested in how data can be used to answer questions
+                    and find useful information. Right now I'm focused on
+                    learning SQL and getting more comfortable with data.
+                    I'm building projects as I learn instead of just following
+                    tutorials.
                 </p>
 
             </div>
@@ -647,67 +466,45 @@
         </section>
 
 
-        <section class="section" id="skills">
+        <!-- SKILLS -->
 
-            <div class="section-top">
+        <section id="skills">
 
-                <h2 class="section-title">
-                    Skills
-                </h2>
-
-                <div class="section-number">
-                    02
-                </div>
-
+            <div class="section-heading">
+                <h2>Skills</h2>
+                <div class="number">02</div>
             </div>
 
+            <div class="skills">
 
-            <div class="skills-layout">
+                <div class="skill">
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-status">Learning</span>
+                </div>
 
-                <p class="skills-intro">
-                    Technical skills I am currently developing through
-                    learning, practice, and personal projects.
-                </p>
+                <div class="skill">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-status">Learning</span>
+                </div>
 
+                <div class="skill">
+                    <span class="skill-name">Data Analysis</span>
+                    <span class="skill-status">Learning</span>
+                </div>
 
-                <div class="skill-list">
+                <div class="skill">
+                    <span class="skill-name">Excel</span>
+                    <span class="skill-status">Learning</span>
+                </div>
 
-                    <div class="skill-row">
-                        <span class="skill-number">01</span>
-                        <span class="skill-name">SQL</span>
-                        <span class="skill-level">Learning</span>
-                    </div>
+                <div class="skill">
+                    <span class="skill-name">Data Visualization</span>
+                    <span class="skill-status">Learning</span>
+                </div>
 
-                    <div class="skill-row">
-                        <span class="skill-number">02</span>
-                        <span class="skill-name">Python</span>
-                        <span class="skill-level">Learning</span>
-                    </div>
-
-                    <div class="skill-row">
-                        <span class="skill-number">03</span>
-                        <span class="skill-name">Data Analysis</span>
-                        <span class="skill-level">Learning</span>
-                    </div>
-
-                    <div class="skill-row">
-                        <span class="skill-number">04</span>
-                        <span class="skill-name">Data Visualization</span>
-                        <span class="skill-level">Learning</span>
-                    </div>
-
-                    <div class="skill-row">
-                        <span class="skill-number">05</span>
-                        <span class="skill-name">Excel</span>
-                        <span class="skill-level">Learning</span>
-                    </div>
-
-                    <div class="skill-row">
-                        <span class="skill-number">06</span>
-                        <span class="skill-name">Git & GitHub</span>
-                        <span class="skill-level">Learning</span>
-                    </div>
-
+                <div class="skill">
+                    <span class="skill-name">GitHub</span>
+                    <span class="skill-status">Learning</span>
                 </div>
 
             </div>
@@ -715,43 +512,55 @@
         </section>
 
 
-        <section class="section" id="projects">
+        <!-- PROJECTS -->
 
-            <div class="section-top">
+        <section id="projects">
 
-                <h2 class="section-title">
-                    Projects
-                </h2>
-
-                <div class="section-number">
-                    03
-                </div>
-
+            <div class="section-heading">
+                <h2>Projects</h2>
+                <div class="number">03</div>
             </div>
 
+            <div class="projects">
 
-            <div class="project-list">
+                <div class="project">
 
-                <div class="project-row">
-
-                    <div class="project-id">
-                        001
-                    </div>
-
-                    <div class="project-info">
+                    <div>
+                        <div class="project-number">01</div>
 
                         <h3>
-                            Projects Coming Soon
+                            Cedar Point Ride Data
                         </h3>
 
                         <p>
-                            Real data projects will be added here as I build them.
+                            SQL project looking at ride wait times,
+                            popularity, and other ride data.
                         </p>
-
                     </div>
 
-                    <div class="project-status">
-                        In Progress
+                    <div class="project-bottom">
+                        SQL · In Progress
+                    </div>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div>
+                        <div class="project-number">02</div>
+
+                        <h3>
+                            More Soon
+                        </h3>
+
+                        <p>
+                            New projects will go here as I build them.
+                        </p>
+                    </div>
+
+                    <div class="project-bottom">
+                        Coming Soon
                     </div>
 
                 </div>
@@ -761,92 +570,51 @@
         </section>
 
 
-        <section class="section" id="education">
+        <!-- EDUCATION -->
 
-            <div class="section-top">
+        <section id="education">
 
-                <h2 class="section-title">
-                    Education
-                </h2>
-
-                <div class="section-number">
-                    04
-                </div>
-
+            <div class="section-heading">
+                <h2>Education</h2>
+                <div class="number">04</div>
             </div>
 
+            <div class="education-box">
 
-            <div class="education-layout">
+                <h3>
+                    Thomas Worthington High School
+                </h3>
 
-                <div class="education-meta">
-                    EDUCATION
-                </div>
-
-                <div class="education-info">
-
-                    <h3>
-                        Thomas Worthington High School
-                    </h3>
-
-                    <p>
-                        High School Student
-                    </p>
-
-                </div>
+                <p>
+                    High School Student
+                </p>
 
             </div>
 
         </section>
 
 
-        <section class="section">
+        <!-- CONTACT -->
 
-            <div class="section-top">
+        <section class="contact" id="contact">
 
-                <h2 class="section-title">
-                    Certifications
-                </h2>
+            <div>
 
-                <div class="section-number">
-                    05
-                </div>
-
-            </div>
-
-
-            <div class="cert-box">
-
-                No certifications yet. This section will be updated as
-                certifications are earned.
-
-            </div>
-
-        </section>
-
-
-        <section class="contact-section" id="contact">
-
-            <div class="contact-content">
-
-                <div class="small-label">
+                <div class="tag">
                     Contact
                 </div>
 
                 <h2>
-                    Let's build<br>
-                    something <span>useful.</span>
+                    Keep in<br>
+                    <span>touch.</span>
                 </h2>
 
                 <p>
-                    Interested in my work or want to connect?
+                    More projects and work will be added here over time.
                 </p>
 
-                <a
-                    href="https://github.com/"
-                    class="contact-link"
-                    target="_blank"
-                >
-                    Visit GitHub →
+                <a href="https://github.com/" target="_blank" class="button">
+                    GitHub →
                 </a>
 
             </div>
@@ -859,15 +627,14 @@
     <footer>
 
         <span>
-            Evan Hiss | Data Analytics
+            Evan Hiss
         </span>
 
         <span>
-            © 2026 Evan Hiss. All rights reserved.
+            2026
         </span>
 
     </footer>
 
 </body>
 </html>
-```
